@@ -1,0 +1,13 @@
+* {
+    padding: 0;
+    box-sizing: border-box;
+}
+
+canvas {
+    width: 500px;
+    height: 500px;
+}
+
+.buttons {
+    width: 500px;
+}
