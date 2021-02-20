@@ -62,6 +62,6 @@ function submitDigit()
     console.log(tensor.shape);
     var input = tensor.split(4, axis=2)[3];
     input = input.reshape([28*28]);
-    var model = await tf.loadLayersModel('https://github.com/prosh14/digit-classification-app/blob/master/digit_classifier.h5?raw=true');
+    var model = tf.loadLayersModel('https://prosh14.github.io/digit-classification-app/model.json');
     console.log(model.predict(input))
 }
