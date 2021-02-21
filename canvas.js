@@ -59,9 +59,11 @@ function submitDigit()
     const smallImageData = smallContext.getImageData(0, 0, smallCanvas.width, smallCanvas.height);
     // smallContext.scale(bigCanvas.width/28, bigCanvas.width/28);
     var tensor = tf.browser.fromPixels(smallImageData, 4);
-    console.log(tensor.shape);
     var input = tensor.split(4, axis=2)[3];
     input = input.reshape([28*28]);
-    var model = tf.loadLayersModel('https://prosh14.github.io/digit-classification-app/model.json');
-    console.log(model.predict(input))
+    const model = tf.loadLayersModel(
+        'https://prosh14.github.io/digit-classification-app/model.json'
+    );
+    const prediction = model.predict(input).argMax(-1);
+    console.log(prediction)
 }
