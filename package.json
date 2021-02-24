@@ -1,0 +1,22 @@
+{
+  "name": "canvas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "canvas.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prosh14/digit-classification-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prosh14/digit-classification-app/issues"
+  },
+  "homepage": "https://github.com/prosh14/digit-classification-app#readme",
+  "dependencies": {
+    "@tensorflow/tfjs": "^2.8.6"
+  }
+}
