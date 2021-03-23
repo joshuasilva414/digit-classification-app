@@ -21,7 +21,7 @@ window.addEventListener("load", () => {
 
     function draw(e){
         if(!drawing) return;
-        context.lineWidth = 30;
+        context.lineWidth = 25;
         context.lineCap = "round";
 
         context.lineTo(e.clientX, e.clientY);
@@ -43,7 +43,9 @@ function clearCanvas()
     bigContext.clearRect(0, 0, bigCanvas.width, bigCanvas.height);
     const smallCanvas = document.getElementById("small-canvas");
     const smallContext = smallCanvas.getContext("2d");
-    smallContext.clearRect(0, 0, smallCanvas.width, smallCanvas.height)
+    smallContext.clearRect(0, 0, smallCanvas.width, smallCanvas.height);
+    prediction_text = document.getElementById("prediction");
+    prediction_text.innerHTML = "";
 }
 
 function submitDigit()
@@ -66,7 +68,8 @@ function submitDigit()
         var model = await tf.loadLayersModel("https://prosh14.github.io/digit-classification-app/model.json");
         var pred = model.predict(input, {batchSize: 1}).argMax(-1);
         prediction_text = document.getElementById("prediction");
-        prediction_text.innerHTML = pred + "";
+        console.log("Digit: " + (pred.toString().substring(12,13)));
+        prediction_text.innerHTML = pred.toString().substring(12,13);
     }
 
     getPrediction();
