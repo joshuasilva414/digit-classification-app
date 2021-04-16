@@ -62,7 +62,7 @@ function submitDigit()
     const smallImageData = smallContext.getImageData(0, 0, smallCanvas.width, smallCanvas.height);
     var tensor = tf.browser.fromPixels(smallImageData, 4);
     var input = tensor.split(4, axis=2)[3];
-    input = input.reshape([1, 28, 28]);
+    input = input.reshape([1, 28, 28, 1]);
 
     async function getPrediction(){
         var model = await tf.loadLayersModel("https://prosh14.github.io/digit-classification-app/model.json");
