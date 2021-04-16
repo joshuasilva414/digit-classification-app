@@ -34,6 +34,7 @@ window.addEventListener("load", () => {
     canvas.addEventListener("mousedown", startPosition);
     canvas.addEventListener("mouseup", finishedPosition);
     canvas.addEventListener("mousemove", draw);
+    canvas.addEventListener("mouseout", finishedPosition);
 });
 
 function clearCanvas()
