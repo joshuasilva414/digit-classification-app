@@ -66,7 +66,7 @@ function submitDigit()
     input = input.reshape([1, 28, 28, 1]);
 
     async function getPrediction(){
-        var model = await tf.loadLayersModel("https://prosh14.github.io/digit-classification-app/model.json");
+        var model = await tf.loadLayersModel("https://joshuasilva414.github.io/digit-classification-app/model.json");
         var pred = model.predict(input, {batchSize: 1}).argMax(-1);
         prediction_text = document.getElementById("prediction");
         console.log("Digit: " + (pred.toString().substring(12,13)));
